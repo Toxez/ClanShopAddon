@@ -1,0 +1,438 @@
+menu:
+  title: "<black>Клановый магазин"
+  size: 45
+  items:
+    - material: AMETHYST_SHARD
+      slot: 4
+      name: "<#FACC15>♯ <gray>| <white>{clan_name}"
+      lore:
+        - ""
+        - " <white>Уровень: <#FACC15>{clan_level}"
+        - " <white>Казна: <#62DE3F>{clan_balance} $"
+        - ""
+        - " <white>Ваш баланс: <#5FBCF1>{player_balance} $"
+        - ""
+      left_click_actions:
+        - "[sound] UI_BUTTON_CLICK;0.7;1.2"
+      right_click_actions:
+        - "[sound] UI_BUTTON_CLICK;0.7;1.2"
+
+    - material: ARROW
+      slot: 40
+      name: "<#C25252>✘ <gray>| <white>Назад"
+      lore: []
+      left_click_actions:
+        - "[open_menu] main-menu"
+        - "[sound] BOOK_PAGE_TURN;0.7;1.2"
+      right_click_actions:
+        - "[open_menu] main-menu"
+        - "[sound] BOOK_PAGE_TURN;0.7;1.2"
+
+    - material: EXPERIENCE_BOTTLE
+      slot: 11
+      name: "<#62DE3F>🔥 <gray>| <white>+100 опыта"
+      lore:
+        - ""
+        - " <white>Добавляет <#62DE3F>+100 опыта <white>клану"
+        - " <white>Цена: <#FACC15>50 монет"
+        - ""
+        - " <gray>— <white>Левый клик: купить"
+        - ""
+      requirements:
+        left_click:
+          mode: ALL
+          conditions:
+            - type: HAS_MONEY
+              amount: 50
+          deny_actions:
+            - "[message] <red>Нужно <white>50 монет<red>. У вас: <white>{player_balance} $"
+            - "[sound] ENTITY_VILLAGER_NO;1.0;1.0"
+      left_click_actions:
+        - "[take-money] 50"
+        - "[give-exp] 100"
+        - "[sound] ENTITY_EXPERIENCE_ORB_PICKUP;1.0;1.0"
+        - "[message] <#62DE3F>Клан получил <white>+100 опыта<#62DE3F>"
+
+    - material: EXPERIENCE_BOTTLE
+      slot: 12
+      name: "<#62DE3F>🔥 <gray>| <white>+1 000 опыта"
+      lore:
+        - ""
+        - " <white>Добавляет <#62DE3F>+1000 опыта <white>клану"
+        - " <white>Цена: <#FACC15>400 монет"
+        - ""
+        - " <gray>— <white>Левый клик: купить"
+        - ""
+      requirements:
+        left_click:
+          mode: ALL
+          conditions:
+            - type: HAS_MONEY
+              amount: 400
+          deny_actions:
+            - "[message] <red>Нужно <white>400 монет<red>. У вас: <white>{player_balance} $"
+            - "[sound] ENTITY_VILLAGER_NO;1.0;1.0"
+      left_click_actions:
+        - "[take-money] 400"
+        - "[give-exp] 1000"
+        - "[sound] ENTITY_EXPERIENCE_ORB_PICKUP;1.0;1.2"
+        - "[message] <#62DE3F>Клан получил <white>+1000 EXP<#62DE3F>"
+
+    - material: EXPERIENCE_BOTTLE
+      slot: 13
+      name: "<#FACC15>🔥 <gray>| <white>+2 000 EXP"
+      lore:
+        - ""
+        - " <white>Добавляет <#FACC15>+2000 EXP <white>клану"
+        - " <white>Цена: <#FACC15>750 монет"
+        - " <white>Требует: <#FACC15>2 уровень клана"
+        - ""
+        - " <gray>— <white>Левый клик: купить"
+        - ""
+      requirements:
+        left_click:
+          mode: ALL
+          conditions:
+            - type: HAS_MONEY
+              amount: 750
+            - type: CLAN_LEVEL
+              min: 2
+          deny_actions:
+            - "[message] <red>Нужно <white>750 монет <red>и <white>2 уровень клана"
+            - "[sound] ENTITY_VILLAGER_NO;1.0;1.0"
+      left_click_actions:
+        - "[take-money] 750"
+        - "[give-exp] 2000"
+        - "[sound] ENTITY_EXPERIENCE_ORB_PICKUP;1.0;1.3"
+        - "[message] <#FACC15>Клан получил <white>+2000 EXP<#FACC15>"
+
+    - material: NETHER_STAR
+      slot: 14
+      name: "<#F97316>🔥 <gray>| <white>+4 000 EXP"
+      lore:
+        - ""
+        - " <white>Добавляет <#F97316>+4000 EXP <white>клану"
+        - " <white>Цена: <#FACC15>1400 монет"
+        - " <white>Требует: <#FACC15>3 уровень клана"
+        - ""
+        - " <gray>— <white>Левый клик: купить"
+        - ""
+      requirements:
+        left_click:
+          mode: ALL
+          conditions:
+            - type: HAS_MONEY
+              amount: 1400
+            - type: CLAN_LEVEL
+              min: 3
+          deny_actions:
+            - "[message] <red>Нужно <white>1400 монет <red>и <white>3 уровень клана"
+            - "[sound] ENTITY_VILLAGER_NO;1.0;1.0"
+      left_click_actions:
+        - "[take-money] 1400"
+        - "[give-exp] 4000"
+        - "[sound] ENTITY_EXPERIENCE_ORB_PICKUP;1.0;1.5"
+        - "[message] <#F97316>Клан получил <white>+4000 EXP<#F97316>"
+
+    - material: NETHER_STAR
+      slot: 15
+      name: "<#EF4444>🔥 <gray>| <white>+6 000 EXP"
+      lore:
+        - ""
+        - " <white>Добавляет <#EF4444>+6000 EXP <white>клану"
+        - " <white>Цена: <#FACC15>2000 монет"
+        - " <white>Требует: <#FACC15>5 уровень клана"
+        - ""
+        - " <gray>— <white>Левый клик: купить"
+        - ""
+      requirements:
+        left_click:
+          mode: ALL
+          conditions:
+            - type: HAS_MONEY
+              amount: 2000
+            - type: CLAN_LEVEL
+              min: 5
+          deny_actions:
+            - "[message] <red>Нужно <white>2000 монет <red>и <white>5 уровень клана"
+            - "[sound] ENTITY_VILLAGER_NO;1.0;1.0"
+      left_click_actions:
+        - "[take-money] 2000"
+        - "[give-exp] 6000"
+        - "[sound] UI_TOAST_CHALLENGE_COMPLETE;1.0;1.0"
+        - "[message] <#EF4444>Клан получил <white>+6000 EXP<#EF4444>"
+
+    - material: GOLDEN_APPLE
+      slot: 20
+      name: "<#FACC15>🔥 <gray>| <white>Золотое яблоко"
+      lore:
+        - ""
+        - " <white>Выдаёт <#FACC15>1 золотое яблоко"
+        - " <white>Цена: <#FACC15>600 монет"
+        - ""
+        - " <gray>— <white>Левый клик: купить"
+        - ""
+      requirements:
+        left_click:
+          mode: ALL
+          conditions:
+            - type: HAS_MONEY
+              amount: 600
+          deny_actions:
+            - "[message] <red>Нужно <white>600 монет<red>. У вас: <white>{player_balance} $"
+            - "[sound] ENTITY_VILLAGER_NO;1.0;1.0"
+      left_click_actions:
+        - "[take-money] 600"
+        - "[console] give {player} golden_apple 1"
+        - "[sound] ENTITY_ITEM_PICKUP;1.0;1.0"
+        - "[message] <#FACC15>Получено <white>1x Золотое яблоко<#FACC15>"
+
+    - material: DIAMOND
+      slot: 21
+      name: "<#5AF0F5>🔥 <gray>| <white>5x Алмаз"
+      lore:
+        - ""
+        - " <white>Выдаёт <#5AF0F5>5 алмазов"
+        - " <white>Цена: <#FACC15>1000 монет"
+        - " <white>Требует: <#FACC15>2 уровень клана"
+        - ""
+        - " <gray>— <white>Левый клик: купить"
+        - ""
+      requirements:
+        left_click:
+          mode: ALL
+          conditions:
+            - type: HAS_MONEY
+              amount: 1000
+            - type: CLAN_LEVEL
+              min: 2
+          deny_actions:
+            - "[message] <red>Нужно <white>1000 монет <red>и <white>2 уровень клана"
+            - "[sound] ENTITY_VILLAGER_NO;1.0;1.0"
+      left_click_actions:
+        - "[take-money] 1000"
+        - "[console] give {player} diamond 5"
+        - "[sound] ENTITY_ITEM_PICKUP;1.0;1.2"
+        - "[message] <#5AF0F5>Получено <white>5x Алмаз<#5AF0F5>"
+
+    - material: ENCHANTED_BOOK
+      slot: 22
+      name: "<#A78BFA>🔥 <gray>| <white>Зачарованная книга"
+      lore:
+        - ""
+        - " <white>Выдаёт <#A78BFA>1 зачарованную книгу"
+        - " <white>Цена: <#FACC15>1500 монет"
+        - " <white>Требует: <#FACC15>2 уровень клана"
+        - ""
+        - " <gray>— <white>Левый клик: купить"
+        - ""
+      requirements:
+        left_click:
+          mode: ALL
+          conditions:
+            - type: HAS_MONEY
+              amount: 1500
+            - type: CLAN_LEVEL
+              min: 2
+          deny_actions:
+            - "[message] <red>Нужно <white>1500 монет <red>и <white>2 уровень клана"
+            - "[sound] ENTITY_VILLAGER_NO;1.0;1.0"
+      left_click_actions:
+        - "[take-money] 1500"
+        - "[console] give {player} enchanted_book 1"
+        - "[sound] ENTITY_ITEM_PICKUP;1.0;1.0"
+        - "[message] <#A78BFA>Получена <white>1x Зачарованная книга<#A78BFA>"
+
+    - material: NETHERITE_INGOT
+      slot: 23
+      name: "<#8B5CF6>🔥 <gray>| <white>1x Незерит"
+      lore:
+        - ""
+        - " <white>Выдаёт <#8B5CF6>1 незерит слиток"
+        - " <white>Цена: <#FACC15>3000 монет"
+        - " <white>Требует: <#FACC15>4 уровень клана"
+        - ""
+        - " <gray>— <white>Левый клик: купить"
+        - ""
+      requirements:
+        left_click:
+          mode: ALL
+          conditions:
+            - type: HAS_MONEY
+              amount: 3000
+            - type: CLAN_LEVEL
+              min: 4
+          deny_actions:
+            - "[message] <red>Нужно <white>3000 монет <red>и <white>4 уровень клана"
+            - "[sound] ENTITY_VILLAGER_NO;1.0;1.0"
+      left_click_actions:
+        - "[take-money] 3000"
+        - "[console] give {player} netherite_ingot 1"
+        - "[sound] ENTITY_ITEM_PICKUP;1.0;1.0"
+        - "[message] <#8B5CF6>Получен <white>1x Незерит слиток<#8B5CF6>"
+
+    - material: TOTEM_OF_UNDYING
+      slot: 24
+      name: "<#F59E0B>🔥 <gray>| <white>1x Тотем"
+      lore:
+        - ""
+        - " <white>Выдаёт <#F59E0B>1 тотем бессмертия"
+        - " <white>Цена: <#FACC15>5000 монет"
+        - " <white>Требует: <#FACC15>6 уровень + лидер"
+        - ""
+        - " <gray>— <white>Левый клик: купить"
+        - ""
+      requirements:
+        left_click:
+          mode: ALL
+          conditions:
+            - type: HAS_MONEY
+              amount: 5000
+            - type: CLAN_LEVEL
+              min: 6
+            - type: IS_OWNER
+          deny_actions:
+            - "[message] <red>Нужно <white>5000 монет<red>, <white>6 уровень <red>и быть <white>лидером"
+            - "[sound] ENTITY_VILLAGER_NO;1.0;1.0"
+      left_click_actions:
+        - "[take-money] 5000"
+        - "[console] give {player} totem_of_undying 1"
+        - "[sound] UI_TOAST_CHALLENGE_COMPLETE;1.0;1.0"
+        - "[message] <#F59E0B>Получен <white>1x Тотем бессмертия<#F59E0B>"
+
+    - material: COW_SPAWN_EGG
+      slot: 29
+      name: "<#E879F9>🔥 <gray>| <white>Яйцо коровы"
+      lore:
+        - ""
+        - " <white>Выдаёт <#E879F9>1 яйцо коровы"
+        - " <white>Цена: <#FACC15>200 монет"
+        - ""
+        - " <gray>— <white>Левый клик: купить"
+        - ""
+      requirements:
+        left_click:
+          mode: ALL
+          conditions:
+            - type: HAS_MONEY
+              amount: 200
+          deny_actions:
+            - "[message] <red>Нужно <white>200 монет<red>. У вас: <white>{player_balance} $"
+            - "[sound] ENTITY_VILLAGER_NO;1.0;1.0"
+      left_click_actions:
+        - "[take-money] 200"
+        - "[console] give {player} cow_spawn_egg 1"
+        - "[sound] ENTITY_ITEM_PICKUP;1.0;1.0"
+        - "[message] <#E879F9>Получено <white>1x Яйцо коровы<#E879F9>"
+
+    - material: SHEEP_SPAWN_EGG
+      slot: 30
+      name: "<#E879F9>🔥 <gray>| <white>Яйцо овцы"
+      lore:
+        - ""
+        - " <white>Выдаёт <#E879F9>1 яйцо овцы"
+        - " <white>Цена: <#FACC15>200 монет"
+        - ""
+        - " <gray>— <white>Левый клик: купить"
+        - ""
+      requirements:
+        left_click:
+          mode: ALL
+          conditions:
+            - type: HAS_MONEY
+              amount: 200
+          deny_actions:
+            - "[message] <red>Нужно <white>200 монет<red>. У вас: <white>{player_balance} $"
+            - "[sound] ENTITY_VILLAGER_NO;1.0;1.0"
+      left_click_actions:
+        - "[take-money] 200"
+        - "[console] give {player} sheep_spawn_egg 1"
+        - "[sound] ENTITY_ITEM_PICKUP;1.0;1.0"
+        - "[message] <#E879F9>Получено <white>1x Яйцо овцы<#E879F9>"
+
+    - material: ZOMBIE_SPAWN_EGG
+      slot: 31
+      name: "<#4ADE80>🔥 <gray>| <white>Яйцо зомби"
+      lore:
+        - ""
+        - " <white>Выдаёт <#4ADE80>1 яйцо зомби"
+        - " <white>Цена: <#FACC15>500 монет"
+        - " <white>Требует: <#FACC15>2 уровень + лидер"
+        - ""
+        - " <gray>— <white>Левый клик: купить"
+        - ""
+      requirements:
+        left_click:
+          mode: ALL
+          conditions:
+            - type: HAS_MONEY
+              amount: 500
+            - type: CLAN_LEVEL
+              min: 2
+            - type: IS_OWNER
+          deny_actions:
+            - "[message] <red>Нужно <white>500 монет<red>, <white>2 уровень <red>и быть <white>лидером"
+            - "[sound] ENTITY_VILLAGER_NO;1.0;1.0"
+      left_click_actions:
+        - "[take-money] 500"
+        - "[console] give {player} zombie_spawn_egg 1"
+        - "[sound] ENTITY_ITEM_PICKUP;1.0;1.0"
+        - "[message] <#4ADE80>Получено <white>1x Яйцо зомби<#4ADE80>"
+
+    - material: CREEPER_SPAWN_EGG
+      slot: 32
+      name: "<#4ADE80>🔥 <gray>| <white>Яйцо крипера"
+      lore:
+        - ""
+        - " <white>Выдаёт <#4ADE80>1 яйцо крипера"
+        - " <white>Цена: <#FACC15>800 монет"
+        - " <white>Требует: <#FACC15>3 уровень + лидер"
+        - ""
+        - " <gray>— <white>Левый клик: купить"
+        - ""
+      requirements:
+        left_click:
+          mode: ALL
+          conditions:
+            - type: HAS_MONEY
+              amount: 800
+            - type: CLAN_LEVEL
+              min: 3
+            - type: IS_OWNER
+          deny_actions:
+            - "[message] <red>Нужно <white>800 монет<red>, <white>3 уровень <red>и быть <white>лидером"
+            - "[sound] ENTITY_VILLAGER_NO;1.0;1.0"
+      left_click_actions:
+        - "[take-money] 800"
+        - "[console] give {player} creeper_spawn_egg 1"
+        - "[sound] ENTITY_ITEM_PICKUP;1.0;1.0"
+        - "[message] <#4ADE80>Получено <white>1x Яйцо крипера<#4ADE80>"
+
+    - material: WITCH_SPAWN_EGG
+      slot: 33
+      name: "<#8B5CF6>🔥 <gray>| <white>Яйцо ведьмы"
+      lore:
+        - ""
+        - " <white>Выдаёт <#8B5CF6>1 яйцо ведьмы"
+        - " <white>Цена: <#FACC15>1200 монет"
+        - " <white>Требует: <#FACC15>4 уровень + лидер"
+        - ""
+        - " <gray>— <white>Левый клик: купить"
+        - ""
+      requirements:
+        left_click:
+          mode: ALL
+          conditions:
+            - type: HAS_MONEY
+              amount: 1200
+            - type: CLAN_LEVEL
+              min: 4
+            - type: IS_OWNER
+          deny_actions:
+            - "[message] <red>Нужно <white>1200 монет<red>, <white>4 уровень <red>и быть <white>лидером"
+            - "[sound] ENTITY_VILLAGER_NO;1.0;1.0"
+      left_click_actions:
+        - "[take-money] 1200"
+        - "[console] give {player} witch_spawn_egg 1"
+        - "[sound] ENTITY_ITEM_PICKUP;1.0;1.0"
+        - "[message] <#8B5CF6>Получено <white>1x Яйцо ведьмы<#8B5CF6>!"

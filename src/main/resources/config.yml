@@ -1,0 +1,7 @@
+#
+# ClanShopAddon - первый аддон для кланов by Tox_8729
+#
+messages:
+  no-clan: "<#C25252>✘ <gray>| <white>Вы <#C25252>не <white>состоите в клане"
+  invalid-amount: "<#C25252>✘ <gray>| <white>Некорректная сумма — <#C25252>{arg}"
+  invalid-exp: "<#C25252>✘ <gray>| <white>Некорректное количество опыта — <#C25252>{arg}"

@@ -1,0 +1,7 @@
+name: ClanShopAddon
+version: '${project.version}'
+main: ua.vdev.clanshopaddon.ClanShopAddon
+author: Tox_8729
+api-version: 1.0
+depend: []
+soft-depend: []
